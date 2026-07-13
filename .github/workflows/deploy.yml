@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm ci --no-audit --no-fund
+      - run: npm install --registry=https://registry.npmjs.org/ --no-audit --no-fund
       - run: npx vite build
       - uses: actions/upload-pages-artifact@v3
         with:
