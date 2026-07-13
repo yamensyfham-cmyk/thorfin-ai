@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-      - run: npm run build -- --base=/thorfin-ai/
+      - run: npm install --no-audit --no-fund --legacy-peer-deps
+      - run: npx vite build --base=/thorfin-ai/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
